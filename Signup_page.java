@@ -41,11 +41,11 @@ public class Signup_page extends AppCompatActivity
 
         //Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                              WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup_page);
 
 
-            //dont touch these codes
+        //dont touch these codes
         //******************************************************
         @SuppressLint({"MissingInflatedId", "LocalSuppress", "WrongViewCast"})
         TextView t2 = findViewById(R.id.textView12);
@@ -93,16 +93,16 @@ public class Signup_page extends AppCompatActivity
 
             private void saved(String Name, String Email, String phone, String password)
             {
-                  RequestBody format = new FormBody.Builder()
-                          .add("t4",Name)
-                          .add("t5",Email)
-                          .add("t6",phone)
-                          .add("t7",password)
-                          .build();
+                RequestBody format = new FormBody.Builder()
+                        .add("t4",Name)
+                        .add("t5",Email)
+                        .add("t6",phone)
+                        .add("t7",password)
+                        .build();
 
-                  Request request = new Request.Builder().url(url).post(format).build();
+                Request request = new Request.Builder().url(url).post(format).build();
 
-                  Call call = client .newCall(request);
+                Call call = client .newCall(request);
 
                 call.enqueue(new Callback() {
 
@@ -114,7 +114,7 @@ public class Signup_page extends AppCompatActivity
                         try {
                             String resp = response.body().string();
                             if (response.isSuccessful()) {
-                                resulttextView.setText("Sign up completed");
+                                resulttextView.setText("Signup completed succesfully...........Now please Login through your details");
                                 t4.setText("");
                                 t5.setText("");
                                 t6.setText("");
@@ -127,8 +127,8 @@ public class Signup_page extends AppCompatActivity
                             t7.setText("");
                             resulttextView.setText(ex.toString());
                         }
-                      }
-                  });
+                    }
+                });
             }
 
 
